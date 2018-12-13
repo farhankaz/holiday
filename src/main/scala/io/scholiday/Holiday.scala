@@ -1,4 +1,4 @@
-package holiday
+package io.scholiday
 
 import java.time._
 import java.time.temporal.TemporalAdjuster
@@ -55,11 +55,6 @@ object MonthlyHoliday {
       override def dateInYear(year: Int): LocalDate = LocalDate.of(year, month, 1).`with`(temporalAdjuster)
     }
   }
-}
-
-trait Holidays {
-  def isHoliday(date:LocalDate): Boolean
-  def allHolidays: Seq[Holiday]
 }
 
 trait IsHoliday[A] {

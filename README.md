@@ -5,27 +5,25 @@ Plan to support Joda LocalDate, LocalDateTime, DateTime instances in the future.
 
 *NOTE*: This is a very early version of this library that I created quickly.  You can expect significant changes in future versions.
 
-The trait holiday.Holidays defines configurations for regional holidays.  Currently, this library provides a Holidays instance of US Federal Holidays(see
-holiday.local.UsFederalHolidays).  I plan to provide Holidays implementations for other regions in the future.  It is pretty straightforward to create a Holidays instance for another region yourself.
+The trait scholiday.Holidays defines configurations for regional holidays.  Currently, this library provides a Holidays instance of US Federal Holidays(see
+scholiday.regions.UsFederalHolidays).  I plan to provide Holidays implementations for other regions in the future.  It is pretty straightforward to create a Holidays instance for another region yourself.
 
 Given an implicit instance of Holidays in scope, the IsHoliday typeclass can tell you if a given day is a holiday.
 
 ### Usage
 
 ```scala
-  import holiday.implicits._
-  // import implicit instance of holiday.Holidays for the region
-  import holiday.local.UsFederalHolidays._
+  import io.scholiday.implicits._
 
-  // Christmas holiday on the 25th of December, unless 25th falls on Saturday or Sunday.
+  // Christmas scholiday on the 25th of December, unless 25th falls on Saturday or Sunday.
   val christmas2018 = LocalDate.of(2018, 12, 25)
   assert(christmas2018.isHoliday == true)
 
-  // Thanksgiving holiday is always the 4th Thursday in November
+  // Thanksgiving scholiday is always the 4th Thursday in November
   val thanksGiving2018 = LocalDate.of(2018, 11, 22)
   assert(thanksGiving2018.isHoliday == true)
 
-  // Non holiday
+  // Non scholiday
   val sameRandomDay = LocalDate.of(2018, 12, 12)
   assert(sameRandomDay.isHoliday == false)
 

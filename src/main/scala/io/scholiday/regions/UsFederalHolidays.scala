@@ -1,12 +1,12 @@
-package holiday.local
+package io.scholiday.regions
 
 import java.time.{DayOfWeek, LocalDate, Month}
 
-import holiday.HolidayUtils._
-import holiday.{Holiday, Holidays}
+import io.scholiday.HolidayUtils._
+import io.scholiday.{Holiday, Holidays}
 
 
-object UsFederalHolidays {
+trait UsFederalHolidays {
   implicit val holidays = new Holidays {
     val allHolidays = Seq(
       Holiday("New Year's Day", Month.JANUARY, weekendOffset(atDayOfMonth(1), true)),

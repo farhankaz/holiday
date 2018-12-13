@@ -1,4 +1,4 @@
-package holiday
+package io.scholiday
 
 import java.time.temporal._
 import java.time.{DayOfWeek, LocalDate}
