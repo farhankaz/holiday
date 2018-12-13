@@ -1,4 +1,4 @@
-# Holiday
+# Scholiday
 
 A Scala library to support date time calculations that need account for regional holidays.  This library provides type classes that support JDK 8 date instances.
 Plan to support Joda LocalDate, LocalDateTime, DateTime instances in the future.
