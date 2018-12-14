@@ -3,7 +3,7 @@ package io.scholiday
 import java.time.temporal._
 import java.time.{DayOfWeek, LocalDate}
 
-object HolidayUtils {
+object DateUtils {
 
   def offsetForWeekend(temporal: Temporal, forwardOnly:Boolean = false) = temporal.get(ChronoField.DAY_OF_WEEK) match {
     case 6 if !forwardOnly =>

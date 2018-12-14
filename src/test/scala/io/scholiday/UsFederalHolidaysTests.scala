@@ -10,9 +10,10 @@ object UsFederalHolidaysTests extends TestSuite {
     LocalDate.of(year, month, dayOfMonth)
 
   def tests = Tests{
+    import regions.UsFederalHolidays._
     "US Federal Holidays" - {
       "2018" - {
-        "Has 10 Holidays" - assert(UsFederalHolidays.allHolidays.size == 10)
+        "Has 10 Holidays" - assert(implicitly[Holidays].allHolidays.size == 10)
         "New Years Day" - assert(d(2018, 1, 1).isHoliday)
         "Martin Luther King" - assert(d(2018, 1, 15).isHoliday)
         "Washington's Birthday" - assert(d(2018, 2, 19).isHoliday)
@@ -28,7 +29,7 @@ object UsFederalHolidaysTests extends TestSuite {
         "Christmas 2018" - assert(d(2018, 12, 25).isHoliday)
       }
       "2019" - {
-        "Has 10 Holidays" - assert(UsFederalHolidays.allHolidays.size == 10)
+        "Has 10 Holidays" - assert(implicitly[Holidays].allHolidays.size == 10)
         "New Years Day" - assert(d(2019, 1, 1).isHoliday)
         "Martin Luther King" - assert(d(2019, 1, 21).isHoliday)
         "Washington's Birthday" - assert(d(2019, 2, 18).isHoliday)
