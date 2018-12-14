@@ -50,4 +50,4 @@ Currently, this library provides rules for US Federal holidays.  These are the s
 * Christmas Day: Dec 25th unless 25th is Saturday/Sunday.  If so, offset to a business day
 
 ### Some outstanding questions..
-* Should JDK's Local be used to retrieve a given locality's holiday rules?
+* Should JDK's Locale be used to retrieve a given locality's holiday rules?
