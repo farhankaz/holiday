@@ -1,4 +1,4 @@
-# Holiday
+# Scholiday
 
 A Scala library to support date time calculations that need account for regional holidays.  This library provides type classes that support JDK 8 date instances.
 Plan to support Joda LocalDate, LocalDateTime, DateTime instances in the future.
@@ -6,7 +6,7 @@ Plan to support Joda LocalDate, LocalDateTime, DateTime instances in the future.
 *NOTE*: This is a very early version of this library that I created quickly.  You can expect significant changes in future versions.
 
 The trait scholiday.Holidays defines configurations for regional holidays.  Currently, this library provides a Holidays instance of US Federal Holidays(see
-scholiday.regions.UsFederalHolidays).  I plan to provide Holidays implementations for other regions in the future.  It is pretty straightforward to create a Holidays instance for another region yourself.
+io.scholiday.regions.UsFederalHolidays).  I plan to provide Holidays implementations for other regions in the future.  It is pretty straightforward to create a Holidays instance for another region yourself in the main time.
 
 Given an implicit instance of Holidays in scope, the IsHoliday typeclass can tell you if a given day is a holiday.
 
