@@ -3,7 +3,7 @@ package io.scholiday
 import java.time.temporal._
 import java.time.{DayOfWeek, LocalDate}
 
-object HolidayUtils {
+object DateUtils {
 
   def offsetForWeekend(temporal: Temporal, forwardOnly:Boolean = false) = temporal.get(ChronoField.DAY_OF_WEEK) match {
     case 6 if !forwardOnly =>
@@ -14,8 +14,6 @@ object HolidayUtils {
       temporal.plus(1, ChronoUnit.DAYS)
     case _ => temporal
   }
-
-  def dateOf(year:Int, month:Int, day:Int = 1) = LocalDate.of(year, month, day)
 
   def first(dayOfWeek: DayOfWeek): TemporalAdjuster =
     TemporalAdjusters.firstInMonth(dayOfWeek)
@@ -39,9 +37,4 @@ object HolidayUtils {
     offsetForWeekend(ta.adjustInto(t), forwardOnly)
   }
 
-  def atDayOfMonthWithWeekendOffset(dayOfMonth:Int):TemporalAdjuster  = (t:Temporal) => {
-    if (t.get(ChronoField.DAY_OF_MONTH) == dayOfMonth) offsetForWeekend(t)
-    else
-      offsetForWeekend(t.`with`(ChronoField.DAY_OF_MONTH, dayOfMonth))
-  }
 }
