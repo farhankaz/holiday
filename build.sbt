@@ -8,7 +8,8 @@ lazy val root = (project in file(".")).
       version      := "0.0.1"
     )),
     name := "scholiday",
+    testFrameworks += new TestFramework("utest.runner.Framework"),
     libraryDependencies ++= Seq(
-      scalaTest % Test
+      uTest % Test
     )
   )

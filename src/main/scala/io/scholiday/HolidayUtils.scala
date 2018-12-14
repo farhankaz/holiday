@@ -15,8 +15,6 @@ object HolidayUtils {
     case _ => temporal
   }
 
-  def dateOf(year:Int, month:Int, day:Int = 1) = LocalDate.of(year, month, day)
-
   def first(dayOfWeek: DayOfWeek): TemporalAdjuster =
     TemporalAdjusters.firstInMonth(dayOfWeek)
 
@@ -39,9 +37,4 @@ object HolidayUtils {
     offsetForWeekend(ta.adjustInto(t), forwardOnly)
   }
 
-  def atDayOfMonthWithWeekendOffset(dayOfMonth:Int):TemporalAdjuster  = (t:Temporal) => {
-    if (t.get(ChronoField.DAY_OF_MONTH) == dayOfMonth) offsetForWeekend(t)
-    else
-      offsetForWeekend(t.`with`(ChronoField.DAY_OF_MONTH, dayOfMonth))
-  }
 }
