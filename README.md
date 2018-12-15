@@ -1,4 +1,5 @@
 # Scholiday
+[![License](http://img.shields.io/:license-Apache%202-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.txt)
 
 A tiny Scala library that contains holiday rules that can be leveraged for date time calculations. This library provides a type class that supports JDK 8 date instances. Plan to support Joda LocalDate, LocalDateTime, DateTime instances in the future.
 
@@ -15,6 +16,10 @@ contribute a pull request.
 
 
 ### Usage
+```scala
+libraryDependencies += "com.github.farhankaz" %% "scholiday" % 0.0.1"
+```
+
 
 ```scala
   import io.scholiday._
